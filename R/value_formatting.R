@@ -37,6 +37,30 @@ format_mean_sd <- function(values, decimals = 2){
   return(paste0(trimws(format(round(mean(as.numeric(values), na.rm = TRUE),decimals), nsmall = decimals)), " (", trimws(format(round(sd(as.numeric(values), na.rm = TRUE),decimals), nsmall = decimals)), ")"))
 }
 
+#' Format Mean Range
+#' 
+#' @description Returns the mean and in parenthesis the range (minimum-maximum) of the values
+#' 
+#' @param values vector of numeric values
+#' @param decimals number of decimals places for the mean, defaults to one
+#' 
+#' @return string
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' format_mean_range()
+#' }
+format_mean_range <- function(values, decimals=1){
+  values <- as.numeric(values)
+  if(all(is.na(values))){
+    return("")
+  }
+  return(paste0(trimws(format(round(mean(values, na.rm = TRUE), decimals), nsmall = decimals)), ' (',
+                trimws(format(round(min(values, na.rm = TRUE), decimals))), '-',
+                trimws(format(round(max(values, na.rm = TRUE), decimals))), ')'))
+}
+
 
 #' Collapse free-text Other entries to a single Other level
 #'
