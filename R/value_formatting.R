@@ -48,9 +48,8 @@ format_mean_sd <- function(values, decimals = 2){
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' format_mean_range()
-#' }
+#' format_mean_range(c(1, 2, 3.46, NA))
+#' format_mean_range(c(10.25, 12.5, 15), decimals = 2)
 format_mean_range <- function(values, decimals=1){
   values <- as.numeric(values)
   if(all(is.na(values))){
