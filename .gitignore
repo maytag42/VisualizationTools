@@ -4,3 +4,6 @@
 .Ruserdata
 .DS_Store
 *.DS_Store
+
+# Cached study data belongs in ADS Workspace/Coding Workspace, never in a repo
+*cached_data/
